@@ -5,13 +5,8 @@ import { useStateValue } from "../context/StateProvider";
 import { getBasketTotal } from "../context/reducer";
 
 function Subtotal() {
-  //pull the basket from useStateValue
   const [{ basket }] = useStateValue();
 
-  // Calculate basket total
-  //   const calculateTotal = (basket) => {
-  //     return basket.reduce((price, item) => item.price + price, 0);
-  //   };
   return (
     <div className="subtotal">
       <CurrencyFormat
@@ -27,7 +22,7 @@ function Subtotal() {
           </>
         )}
         decimalScale={2}
-        value={getBasketTotal(basket)} // homework
+        value={getBasketTotal(basket)}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}

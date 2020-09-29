@@ -19,7 +19,6 @@ function App() {
           user: authUser,
         });
       } else {
-        // user is logged out
         dispatch({
           type: "SET_USER",
           user: null,
@@ -28,20 +27,19 @@ function App() {
     });
   }, []);
   return (
-    //BEM
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/">
+            <Header />
+            <Home />
+          </Route>
           <Route path="/checkout">
             <Header />
             <Checkout />
           </Route>
           <Route path="/login">
             <Login />
-          </Route>
-          <Route path="/">
-            <Header />
-            <Home />
           </Route>
         </Switch>
       </div>
